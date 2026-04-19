@@ -491,7 +491,7 @@
     line-height: 1.7;
   }
 
-  /* ===== PANEL 2: VERITAS FORENSIC ANALYZER ===== */
+  /* ===== PANEL 2: FORENSIC GRID (kept for CSE layout reuse) ===== */
   .forensic-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -916,29 +916,25 @@
 <header>
   <div class="logo">
     <div>
-      <div class="logo-main">VERITAS</div>
-      <div class="logo-sub">× Virality DNA Decoder</div>
+      <div class="logo-main">VIRALITY DNA</div>
+      <div class="logo-sub">YouTube Trending Intelligence</div>
     </div>
   </div>
   <div class="header-badges">
     <span class="badge badge-green">Live Model</span>
-    <span class="badge badge-red">Resonance Engine</span>
-    <span class="badge badge-purple">YouTube 2026</span>  </div>
+    <span class="badge badge-purple">YouTube 2026</span>
+    <span class="badge" style="background:rgba(245,166,35,0.15);color:var(--accent4);border:1px solid rgba(245,166,35,0.3)">11 Countries</span></div>
 </header>
 
 <div class="hero">
-  <div class="hero-eyebrow">// Forensic Virality Intelligence</div>
+  <div class="hero-eyebrow">// YouTube Trending Intelligence 2026</div>
   <h1>CRACK THE <span class="accent">CODE</span><br>OF <span class="red">VIRAL</span></h1>
-  <p>Predict virality before upload. Detect inorganic inflation. Benchmark against category norms. The only tool that merges resonance forensics with predictive DNA scoring.</p>
+  <p>Predict virality before you upload. Score your video's DNA across timing, title, tags, and category — then get a complete creator strategy backed by the 2026 YouTube Trending dataset.</p>
 
   <div class="tabs" id="mainTabs">
     <button class="tab active" onclick="switchTab('dna')" id="tab-dna">
       <span class="tab-dot" style="background:#00f5a0"></span>
       Virality DNA Scorer
-    </button>
-    <button class="tab" onclick="switchTab('veritas')" id="tab-veritas">
-      <span class="tab-dot" style="background:#ff3c6e"></span>
-      Veritas Forensics
     </button>
     <button class="tab" onclick="switchTab('explorer')" id="tab-explorer">
       <span class="tab-dot" style="background:#f5a623"></span>
@@ -1082,134 +1078,6 @@
       <div class="insight-box" id="insightBox">
         <div class="insight-title">// Unexpected Feature Combination Detected</div>
         <div class="insight-text" id="insightText">—</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ========== PANEL 2: VERITAS FORENSICS ========== -->
-  <div class="panel" id="panel-veritas">
-
-    <div class="dataset-note">
-      <span>🔬</span>
-      <span>Paste video stats to run a forensic breakdown — detecting artificial inflation, bot swarms, and category mismatches. <strong>Veritas separates real resonance from manufactured reach.</strong></span>
-    </div>
-
-    <div class="input-section">
-      <div class="section-title">FORENSIC INPUT</div>
-      <div class="section-subtitle">Enter video performance data for analysis</div>
-
-      <div class="input-grid">
-        <div class="field">
-          <label>Views (Total)</label>
-          <input type="number" id="f_views" placeholder="e.g. 4500000" />
-        </div>
-        <div class="field">
-          <label>Likes</label>
-          <input type="number" id="f_likes" placeholder="e.g. 180000" />
-        </div>
-        <div class="field">
-          <label>Comments</label>
-          <input type="number" id="f_comments" placeholder="e.g. 8200" />
-        </div>
-        <div class="field">
-          <label>Days on Trending</label>
-          <input type="number" id="f_days" placeholder="e.g. 3" min="1" max="30" />
-        </div>
-        <div class="field">
-          <label>Category</label>
-          <select id="f_category">
-            <option value="">Select category...</option>
-            <option value="Gaming">Gaming</option>
-            <option value="Music">Music</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Education">Education</option>
-            <option value="News">News & Politics</option>
-            <option value="Sports">Sports</option>
-            <option value="Comedy">Comedy</option>
-            <option value="Howto">How-to & Style</option>
-            <option value="Science">Science & Tech</option>
-            <option value="Travel">Travel & Events</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Comments Disabled?</label>
-          <select id="f_commentsdisabled">
-            <option value="no">No</option>
-            <option value="yes">Yes</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="field" style="margin-bottom:24px">
-        <label>Sample Comments (paste 3–5 below, one per line)</label>
-        <textarea id="f_comments_text" rows="5" placeholder="This video changed my life!&#10;Amazing content as always!&#10;Great video!&#10;So inspiring!!&#10;This is the best video ever!!!"></textarea>
-      </div>
-
-      <button class="btn-primary" onclick="runForensics()">
-        <span>🔬</span> RUN FORENSIC ANALYSIS
-      </button>
-      <button class="btn-secondary" onclick="fillForensicExample()">Load Suspicious Example</button>
-    </div>
-
-    <!-- Loader -->
-    <div class="loader" id="veritas-loader">
-      <div class="spinner"></div>
-      <div class="loader-text">Running Veritas forensic protocols...</div>
-    </div>
-
-    <!-- Forensic Results -->
-    <div id="forensicResults" style="display:none; animation: fadeUp 0.5s ease;">
-
-      <!-- Resonance Velocity -->
-      <div class="forensic-grid">
-        <div class="metric-card">
-          <div class="metric-card-title" style="color: var(--accent)">Resonance Score</div>
-          <div class="big-metric" id="f_resonanceScore" style="color:var(--accent)">—</div>
-          <div class="metric-sub" id="f_resonanceSub">Genuine cultural impact vs. total reach</div>
-          <div style="margin-top:12px">
-            <div class="staircase-label">Engagement Velocity Pattern</div>
-            <div class="staircase-wrap">
-              <canvas id="velocityCanvas" width="360" height="100"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-card-title" style="color: var(--accent2)">Decay Coefficient</div>
-          <div class="big-metric" id="f_decayScore" style="color:var(--accent2)">—</div>
-          <div class="metric-sub" id="f_decaySub">How fast engagement drops post-trending</div>
-          <div style="margin-top:16px">
-            <div class="staircase-label">Organic vs Inorganic Pattern</div>
-            <div id="decayBars" class="entropy-bars"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Flags -->
-      <div class="forensic-grid">
-        <div class="metric-card">
-          <div class="metric-card-title" style="color: var(--accent4)">Linguistic Entropy — Dead Internet Filter</div>
-          <div id="entropyBars" class="entropy-bars" style="margin-bottom:20px"></div>
-          <div id="entropyVerdict" class="flag-item flag-green" style="margin-top:8px"></div>
-        </div>
-
-        <div class="metric-card">
-          <div class="metric-card-title" style="color: #b39ddb">Category Benchmark — Normative Fit</div>
-          <div id="benchmarkRows" class="benchmark-rows"></div>
-        </div>
-      </div>
-
-      <!-- Alert Flags -->
-      <div class="chart-card" style="margin-top:4px">
-        <div class="chart-title">// VERITAS ALERT FLAGS</div>
-        <ul class="flags-list" id="alertFlags"></ul>
-      </div>
-
-      <!-- Overall Verdict -->
-      <div class="insight-box" style="margin-top:8px">
-        <div class="insight-title">// VERITAS VERDICT</div>
-        <div class="insight-text" id="veritasVerdict">—</div>
       </div>
 
     </div>
@@ -1394,7 +1262,7 @@ const COUNTRY_DATA = [
 // TAB SWITCHING
 // ============================================================
 function switchTab(name) {
-  ['dna', 'veritas', 'explorer'].forEach(t => {
+  ['dna', 'explorer'].forEach(t => {
     document.getElementById('panel-' + t).classList.remove('active');
     document.getElementById('tab-' + t).classList.remove('active');
   });
@@ -1595,252 +1463,6 @@ function animateNumber(id, from, to, duration) {
 }
 
 // ============================================================
-// PANEL 2 — VERITAS FORENSICS
-// ============================================================
-function fillForensicExample() {
-  document.getElementById('f_views').value = '4800000';
-  document.getElementById('f_likes').value = '38000';
-  document.getElementById('f_comments').value = '1200';
-  document.getElementById('f_days').value = '2';
-  document.getElementById('f_category').value = 'Gaming';
-  document.getElementById('f_commentsdisabled').value = 'no';
-  document.getElementById('f_comments_text').value =
-    'This is so inspiring!\nGreat video as always!\nAmazing content!\nThis changed my life!\nBest video ever!!!';
-}
-
-function runForensics() {
-  const views = parseInt(document.getElementById('f_views').value) || 0;
-  const likes = parseInt(document.getElementById('f_likes').value) || 0;
-  const comments = parseInt(document.getElementById('f_comments').value) || 0;
-  const days = parseInt(document.getElementById('f_days').value) || 1;
-  const category = document.getElementById('f_category').value;
-  const commentsDisabled = document.getElementById('f_commentsdisabled').value === 'yes';
-  const commentsText = document.getElementById('f_comments_text').value;
-
-  if (!views || !category) {
-    alert('Please fill in at least Views and Category.');
-    return;
-  }
-
-  document.getElementById('veritas-loader').classList.add('visible');
-  document.getElementById('forensicResults').style.display = 'none';
-
-  setTimeout(() => {
-    const result = computeForensics({ views, likes, comments, days, category, commentsDisabled, commentsText });
-    renderForensics(result, { views, likes, comments, days, category });
-    document.getElementById('veritas-loader').classList.remove('visible');
-    document.getElementById('forensicResults').style.display = 'block';
-  }, 1600);
-}
-
-function computeForensics({ views, likes, comments, days, category, commentsDisabled, commentsText }) {
-  const base = CATEGORY_BASELINES[category] || CATEGORY_BASELINES['Entertainment'];
-
-  const ltv = (likes / views * 100);  // Like-to-view %
-  const ctv = (comments / views * 100); // Comment-to-view %
-  const ltvDiff = ltv - base.ltv;
-  const ctvDiff = ctv - base.ctv;
-
-  // RESONANCE SCORE — based on engagement quality vs category baseline
-  let resonance = 50;
-  if (ltv >= base.ltv * 0.8 && ctv >= base.ctv * 0.7) resonance = 82;
-  else if (ltv >= base.ltv * 0.5) resonance = 62;
-  else resonance = 35;
-  if (comments === 0 || commentsDisabled) resonance -= 15;
-  resonance = Math.max(10, Math.min(100, resonance));
-
-  // DECAY COEFFICIENT — simulated; high views with low engagement = fast decay
-  const engagementRatio = (likes + comments) / views;
-  let decayCoef;
-  if (engagementRatio > 0.05) decayCoef = 'SLOW';
-  else if (engagementRatio > 0.02) decayCoef = 'MODERATE';
-  else decayCoef = 'RAPID';
-
-  const decayScore = decayCoef === 'SLOW' ? 82 : decayCoef === 'MODERATE' ? 55 : 28;
-
-  // LINGUISTIC ENTROPY
-  let entropyScore = 60;
-  let entropyVerdict = 'neutral';
-  if (commentsText) {
-    const lines = commentsText.split('\n').map(l => l.trim()).filter(Boolean);
-    if (lines.length >= 2) {
-      const avgLen = lines.reduce((a, b) => a + b.length, 0) / lines.length;
-      const exclamations = lines.filter(l => l.includes('!')).length / lines.length;
-      const uniqueTokens = new Set(lines.flatMap(l => l.toLowerCase().split(/\s+/))).size;
-      const tokenPerLine = uniqueTokens / lines.length;
-      const genericPhrases = ['great video', 'amazing', 'best video', 'inspiring', 'changed my life', 'so good'];
-      const genericHits = lines.filter(l => genericPhrases.some(p => l.toLowerCase().includes(p))).length;
-      const genericRatio = genericHits / lines.length;
-
-      entropyScore = Math.round(
-        (tokenPerLine * 15) +
-        (avgLen > 30 ? 30 : avgLen) +
-        (exclamations > 0.6 ? -20 : 10) +
-        (genericRatio > 0.5 ? -30 : 10)
-      );
-      entropyScore = Math.max(5, Math.min(100, entropyScore));
-
-      if (entropyScore >= 65) entropyVerdict = 'high';
-      else if (entropyScore >= 40) entropyVerdict = 'medium';
-      else entropyVerdict = 'low';
-    }
-  }
-
-  // CATEGORY MISMATCH
-  let mismatch = false;
-  let mismatchText = '';
-  if (ltv > base.ltv * 2.5) {
-    mismatch = true;
-    mismatchText = `Like ratio (${ltv.toFixed(2)}%) is ${(ltv/base.ltv).toFixed(1)}× the ${category} baseline — suggests audience cross-contamination or coordinated boosting.`;
-  } else if (ltv < base.ltv * 0.2) {
-    mismatch = true;
-    mismatchText = `Like ratio (${ltv.toFixed(2)}%) is far below ${category} baseline (${base.ltv}%) — possible view count inflation without genuine engagement.`;
-  }
-
-  // ALERTS
-  const flags = [];
-  if (ltv < base.ltv * 0.3) flags.push({ type: 'red', icon: '🚨', text: 'Extremely low Like-to-View ratio', meta: `${ltv.toFixed(3)}% vs ${category} baseline of ${base.ltv}%. Strong signal of view count inflation.` });
-  if (decayCoef === 'RAPID') flags.push({ type: 'red', icon: '📉', text: 'Rapid Decay Coefficient detected', meta: 'Engagement/view ratio below 2%. Pattern consistent with bot-driven traffic that disappears after campaign ends.' });
-  if (entropyVerdict === 'low') flags.push({ type: 'red', icon: '🤖', text: 'Generative Bot Swarm detected — Dead Internet Signal', meta: 'Comments show low linguistic entropy: repetitive sentiment, generic phrases, high exclamation density. Hallucinated audience likely.' });
-  if (commentsDisabled) flags.push({ type: 'yellow', icon: '🔇', text: 'Comments disabled', meta: 'Disabling comments removes the most reliable human-entropy signal. This reduces the Resonance Score by default.' });
-  if (mismatch) flags.push({ type: 'yellow', icon: '⚠️', text: 'Category Context Mismatch', meta: mismatchText });
-  if (days <= 1 && resonance > 70) flags.push({ type: 'green', icon: '⚡', text: 'Flash virality pattern — authentic spike', meta: 'High engagement in short trending window suggests genuine human interest burst, not sustained bot campaign.' });
-  if (resonance >= 75 && entropyVerdict === 'high' && decayCoef !== 'RAPID') {
-    flags.push({ type: 'green', icon: '✅', text: 'High-integrity audience detected', meta: 'Linguistic entropy is high, engagement ratio aligns with category baseline. This video has genuine resonance.' });
-  }
-  if (flags.length === 0) flags.push({ type: 'yellow', icon: 'ℹ️', text: 'No critical anomalies detected', meta: 'Metrics are within normal range for this category. Moderate confidence in organic performance.' });
-
-  // VERDICT
-  let verdict;
-  if (resonance >= 70 && entropyVerdict !== 'low' && decayCoef !== 'RAPID') {
-    verdict = `<strong>ORGANIC — High Resonance.</strong> This video shows the hallmarks of genuine cultural impact. Engagement ratios align with the ${category} baseline, linguistic entropy is healthy, and decay velocity suggests sustained human interest. No significant inorganic signals detected. Confidence: <span class="color-green">HIGH</span>.`;
-  } else if (resonance >= 50) {
-    verdict = `<strong>MIXED SIGNAL.</strong> Some metrics align with organic behavior, but anomalies exist. ${mismatch ? 'Category context mismatch detected. ' : ''}${entropyVerdict === 'low' ? 'Comment entropy is suspicious — possible bot activity in a subset of traffic. ' : ''}Recommend cross-referencing with posting history and subscriber spike data. Confidence: <span class="color-yellow">MEDIUM</span>.`;
-  } else {
-    verdict = `<strong>⚠️ INORGANIC INFLATION LIKELY.</strong> Multiple Veritas forensic signals converge on a single conclusion: this video's reach is significantly inflated by non-human activity. Like-to-View ratio is ${ltv < base.ltv * 0.3 ? 'critically low' : 'anomalous'}${entropyVerdict === 'low' ? ', comment section shows Generative Bot Swarm signatures' : ''}${decayCoef === 'RAPID' ? ', and engagement decays at a rate inconsistent with organic virality' : ''}. Investors should treat the "reach" metric as a vanity number. <span class="color-red">Confidence: HIGH that this is inorganic.</span>`;
-  }
-
-  return { resonance, decayScore, decayCoef, entropyScore, entropyVerdict, flags, verdict, ltv, ctv, base, mismatch };
-}
-
-function renderForensics(r, raw) {
-  // Resonance
-  document.getElementById('f_resonanceScore').textContent = r.resonance + '/100';
-  document.getElementById('f_resonanceSub').textContent =
-    r.resonance >= 70 ? 'Strong genuine engagement signal' :
-    r.resonance >= 50 ? 'Mixed engagement signals' : 'Weak resonance — likely inflated reach';
-
-  // Draw velocity canvas
-  const canvas = document.getElementById('velocityCanvas');
-  const ctx = canvas.getContext('2d');
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const isOrganic = r.resonance >= 65;
-  const pts = isOrganic
-    ? [0,10,35,70,92,85,70,55,40,30,22,16,12,9,7]
-    : [0,5,42,43,70,71,30,31,32,7,8,9,2,3,2];
-  const maxV = Math.max(...pts);
-  const w = canvas.width / (pts.length - 1);
-  ctx.beginPath();
-  ctx.strokeStyle = isOrganic ? '#00f5a0' : '#ff3c6e';
-  ctx.lineWidth = 2;
-  ctx.shadowBlur = 8;
-  ctx.shadowColor = isOrganic ? '#00f5a0' : '#ff3c6e';
-  pts.forEach((v, i) => {
-    const x = i * w;
-    const y = canvas.height - (v / maxV) * (canvas.height - 10) - 5;
-    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-  });
-  ctx.stroke();
-  // Fill under
-  ctx.lineTo(canvas.width, canvas.height);
-  ctx.lineTo(0, canvas.height);
-  ctx.closePath();
-  ctx.fillStyle = isOrganic ? 'rgba(0,245,160,0.08)' : 'rgba(255,60,110,0.08)';
-  ctx.fill();
-
-  // Decay bars
-  document.getElementById('decayBars').innerHTML = `
-    <div class="entropy-row">
-      <div class="entropy-label">ORGANIC PATTERN</div>
-      <div class="entropy-bar-bg"><div class="entropy-bar-fill bar-green" style="width:${r.resonance}%"></div></div>
-      <div class="entropy-val color-green">${r.resonance}%</div>
-    </div>
-    <div class="entropy-row">
-      <div class="entropy-label">DECAY RATE</div>
-      <div class="entropy-bar-bg"><div class="entropy-bar-fill bar-red" style="width:${100 - r.decayScore}%"></div></div>
-      <div class="entropy-val color-red">${r.decayCoef}</div>
-    </div>
-  `;
-
-  // Entropy bars
-  const entropyItems = [
-    { label: 'LEXICAL DIVERSITY', val: Math.min(100, r.entropyScore + 10), color: r.entropyScore > 60 ? 'green' : 'red' },
-    { label: 'SENTIMENT VARIETY', val: r.entropyScore, color: r.entropyScore > 60 ? 'green' : 'red' },
-    { label: 'LENGTH VARIANCE',   val: Math.min(100, r.entropyScore - 10 + 20), color: r.entropyScore > 50 ? 'yellow' : 'red' },
-  ];
-  document.getElementById('entropyBars').innerHTML = entropyItems.map(e => `
-    <div class="entropy-row">
-      <div class="entropy-label">${e.label}</div>
-      <div class="entropy-bar-bg"><div class="entropy-bar-fill bar-${e.color}" style="width:${e.val}%"></div></div>
-      <div class="entropy-val color-${e.color}">${e.val}</div>
-    </div>
-  `).join('');
-
-  const ev = document.getElementById('entropyVerdict');
-  if (r.entropyVerdict === 'high') {
-    ev.className = 'flag-item flag-green';
-    ev.innerHTML = '<span class="flag-icon">✅</span><div><div class="flag-text">High Linguistic Entropy — Human audience detected</div><div class="flag-meta">Comments show natural variance, slang, and unique expressions.</div></div>';
-  } else if (r.entropyVerdict === 'medium') {
-    ev.className = 'flag-item flag-yellow';
-    ev.innerHTML = '<span class="flag-icon">⚠️</span><div><div class="flag-text">Medium Entropy — Partial bot activity possible</div><div class="flag-meta">Some generic patterns detected. Mixed human/automated audience likely.</div></div>';
-  } else {
-    ev.className = 'flag-item flag-red';
-    ev.innerHTML = '<span class="flag-icon">🤖</span><div><div class="flag-text">Low Entropy — Generative Bot Swarm signature</div><div class="flag-meta">Repetitive, perfect grammar, generic positive sentiment. Dead Internet signal.</div></div>';
-  }
-
-  // Benchmark
-  const ltvStatus = r.ltv >= r.base.ltv * 0.7 ? 'color-green' : r.ltv >= r.base.ltv * 0.4 ? 'color-yellow' : 'color-red';
-  const ctvStatus = r.ctv >= r.base.ctv * 0.7 ? 'color-green' : r.ctv >= r.base.ctv * 0.4 ? 'color-yellow' : 'color-red';
-  document.getElementById('benchmarkRows').innerHTML = `
-    <div class="benchmark-row">
-      <div class="benchmark-label">Like-to-View Ratio</div>
-      <div class="benchmark-vals">
-        <div class="bval"><div class="bval-label">Yours</div><div class="bval-num ${ltvStatus}">${r.ltv.toFixed(3)}%</div></div>
-        <div class="compare-arrow" style="color:var(--muted)">vs</div>
-        <div class="bval"><div class="bval-label">Category Avg</div><div class="bval-num color-green">${r.base.ltv}%</div></div>
-      </div>
-    </div>
-    <div class="benchmark-row">
-      <div class="benchmark-label">Comment-to-View Ratio</div>
-      <div class="benchmark-vals">
-        <div class="bval"><div class="bval-label">Yours</div><div class="bval-num ${ctvStatus}">${r.ctv.toFixed(4)}%</div></div>
-        <div class="compare-arrow" style="color:var(--muted)">vs</div>
-        <div class="bval"><div class="bval-label">Category Avg</div><div class="bval-num color-green">${r.base.ctv}%</div></div>
-      </div>
-    </div>
-    <div class="benchmark-row">
-      <div class="benchmark-label">Mismatch Alert</div>
-      <div class="benchmark-vals">
-        <div class="bval"><div class="bval-num ${r.mismatch ? 'color-red' : 'color-green'}">${r.mismatch ? 'DETECTED' : 'CLEAR'}</div></div>
-      </div>
-    </div>
-  `;
-
-  // Alert flags
-  document.getElementById('alertFlags').innerHTML = r.flags.map(f => `
-    <li class="flag-item flag-${f.type}">
-      <span class="flag-icon">${f.icon}</span>
-      <div>
-        <div class="flag-text"><strong>${f.text}</strong></div>
-        <div class="flag-meta">${f.meta}</div>
-      </div>
-    </li>
-  `).join('');
-
-  document.getElementById('veritasVerdict').innerHTML = r.verdict;
-}
-
-// ============================================================
 // PANEL 3 — CREATOR STRATEGY ENGINE
 // ============================================================
 
@@ -2009,7 +1631,7 @@ function renderCSE({ category, country, size, frequency }) {
         <div>
           <div class="staircase-label">LIKE-TO-VIEW TARGET</div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--accent);line-height:1.2">${base.ltv}%</div>
-          <div class="factor-tip">Category baseline. Below this = flag for Veritas forensics.</div>
+          <div class="factor-tip">Category baseline from the 2026 trending dataset. Aim to stay at or above this.</div>
         </div>
         <div>
           <div class="staircase-label">COMMENT-TO-VIEW TARGET</div>
